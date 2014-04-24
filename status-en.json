@@ -1,9 +1,10 @@
 {
-  "checking entity": "distant shores media; wycliffe associates", 
-  "checking level": "3", 
-  "contributors": "distant shores media", 
-  "publish date": "2014-01-01", 
-  "source text": "en", 
-  "source text version": "2.0", 
+  "checking_entity": "Distant Shores Media; Wycliffe Associates", 
+  "checking_level": "3", 
+  "comments": "Original source text.", 
+  "contributors": "Distant Shores Media", 
+  "publish_date": "2014-04-24", 
+  "source_text": "en", 
+  "source_text_version": "2.0", 
   "version": "2.0"
 }
