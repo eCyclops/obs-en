@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>5. The Son of Promise</h1><h3>A Bible story from: Genesis 16-22</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>5. The Son of Promise</h1><h3>A Bible story from: Genesis 16-22</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-05-01.jpg"><p>Ten years after Abram and Sarai arrived in Canaan, they still did not have a child. So Abram's wife, Sarai, said to him, "Since God has not allowed me to have children and now I am too old to have children, here is my servant, Hagar. Marry her also so she can have a child for me."</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-05-02.jpg"><p>So Abram married Hagar. Hagar had a baby boy, and Abram named him Ishmael. But Sarai became jealous of Hagar. When Ishmael was thirteen years old, God again spoke to Abram.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-05-03.jpg"><p>God said, "I am God Almighty. I will make a covenant with you." Then Abram bowed to the ground. God also told Abram, "You will be the father of many nations. I will give you and your descendants the land of Canaan as their possession and I will be their God forever. You must circumcise every male in your family."</p></section>
@@ -106,13 +105,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-05-09.jpg"><p>Nearby Abraham saw a ram that was stuck in a bush. God had provided the ram to be the sacrifice instead of Isaac. Abraham happily offered the ram as a sacrifice.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-05-10.jpg"><p>Then God said to Abraham, "Because you were willing to give me everything, even your only son, I promise to bless you. Your descendants will be more than the stars in the sky. Because you have obeyed me, all the families of the world will be blessed through your family."</p></section>
 <section><a href="../06/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

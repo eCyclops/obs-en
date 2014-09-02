@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>4. God’s Covenant with Abraham</h1><h3>A Bible story from: Genesis 11-15</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>4. God’s Covenant with Abraham</h1><h3>A Bible story from: Genesis 11-15</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-04-01.jpg"><p>Many years after the flood, there were again many people in the world, and they all spoke the same language. Instead of filling the earth as God had commanded, they gathered together and built a city.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-04-02.jpg"><p>They were very proud, and they did not care about what God said. They even began building a tall tower to reach heaven. God saw that if they all kept working together to do evil, they could do many more sinful things.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-04-03.jpg"><p>So God changed their language into many different languages and spread the people out all over the world. The city they had begun to build was called Babel, which means, "confused."</p></section>
@@ -105,13 +104,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-04-08.jpg"><p>Many years went by, but Abram and Sarai still did not have a son. God spoke to Abram and promised again that he would have a son and as many descendants as the stars in the sky. Abram believed God's promise. God declared that Abram was righteous because he believed in God's promise.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-04-09.jpg"><p>Then God made a covenant with Abram. A covenant is an agreement between two parties. God said, "I will give you a son from your own body. I give the land of Canaan to your descendants." But Abram still did not have a son.</p></section>
 <section><a href="../05/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>47. Paul and Silas in Philippi</h1><h3>A Bible story from: Acts 16:11-40</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>47. Paul and Silas in Philippi</h1><h3>A Bible story from: Acts 16:11-40</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-47-01.jpg"><p>As Saul traveled throughout the Roman Empire, he began to use his Roman name, "Paul." One day, Paul and his friend Silas went to the town of Philippi to proclaim the good news about Jesus. They went to a place by the river outside the city where people gathered to pray. There they met a woman named Lydia who was a merchant. She loved and worshiped God.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-47-02.jpg"><p>God opened Lydia's heart to believe the message about Jesus, and she and her family were baptized. She invited Paul and Silas to stay at her house, so they stayed with her and her family.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-47-03.jpg"><p>Paul and Silas often met with people at the place of prayer. Every day as they walked there, a slave girl possessed by a demon followed them. By means of this demon she predicted the future for people, so she made a lot of money for her masters as a fortuneteller.</p></section>
@@ -110,13 +109,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-47-13.jpg"><p>The next day the leaders of the city released Paul and Silas from prison and asked them to leave Philippi. Paul and Silas visited Lydia and some other friends and then left the city. The good news about Jesus kept spreading, and the Church kept growing.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-47-14.jpg"><p>Paul and other Christian leaders traveled to many cities, preaching and teaching people the good news about Jesus. They also wrote many letters to encourage and teach the believers in the churches. Some of these letters became books of the Bible.</p></section>
 <section><a href="../48/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

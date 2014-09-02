@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>35. The Story of the Compassionate Father</h1><h3>A Bible story from: Luke 15:11-32</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>35. The Story of the Compassionate Father</h1><h3>A Bible story from: Luke 15:11-32</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-35-01.jpg"><p>One day, Jesus was teaching many tax collectors and other sinners who had gathered to hear him.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-35-02.jpg"><p>Some religious leaders who were also there saw Jesus treating these sinners as friends, and they began to criticize him to each other. So Jesus told them this story.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-35-03.jpg"><p>"There was a man who had two sons. The younger son told his father, 'Father, I want my inheritance now!' So the father divided his property between his two sons."</p></section>
@@ -109,13 +108,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-35-12.jpg"><p>"The older son said to his father, 'All these years I have worked faithfully for you! I never disobeyed you, and still you did not even give me one small goat so I could celebrate with my friends. But when this son of yours who consumed your money in sinful behavior came home, you killed the best calf for him!'"</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-35-13.jpg"><p>"The father answered, 'My son, you are always with me, and everything I have is yours. But it is right for us to celebrate, because your brother was dead, but now is alive. He was lost, but now is found!'"</p></section>
 <section><a href="../36/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

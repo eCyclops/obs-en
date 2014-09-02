@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>13. God’s Covenant with Israel</h1><h3>A Bible story from: Exodus 19-34</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>13. God’s Covenant with Israel</h1><h3>A Bible story from: Exodus 19-34</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-13-01.jpg"><p>After God led the Israelites through the Red Sea, he led them through the wilderness to a mountain called Sinai. This was the same mountain where Moses had seen the burning bush. The people set up their tents at the base of the mountain.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-13-02.jpg"><p>God said to Moses and the people of Israel, "If you will obey me and keep my covenant, you will be my prized possession, a kingdom of priests, and a holy nation."</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-13-03.jpg"><p>Three days later, after the people had prepared themselves spiritually, God came down on top of Mount Sinai with thunder, lightning, smoke, and a loud trumpet blast. Only Moses was allowed to go up the mountain.</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-13-14.jpg"><p>Then Moses beat the idol into powder, threw the powder into some water and made the people drink the water. God sent a plague on the people and many of them died.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-13-15.jpg"><p>Moses climbed the mountain again and prayed that God would forgive the people. God listened to Moses and forgave them. Moses wrote the Ten Commandments on new stone tablets to replace the ones he had broken. Then God led the Israelites away from Mount Sinai toward the Promised Land.</p></section>
 <section><a href="../14/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

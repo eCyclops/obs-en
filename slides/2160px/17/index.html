@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>17. God’s Covenant with David</h1><h3>A Bible story from: 1 Samuel 10; 15-19; 24; 31; 2 Samuel 5; 7; 11-12</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>17. God’s Covenant with David</h1><h3>A Bible story from: 1 Samuel 10; 15-19; 24; 31; 2 Samuel 5; 7; 11-12</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-17-01.jpg"><p>Saul was the first king of Israel. He was tall and handsome, just like the people wanted. Saul was a good king for the first few years that he ruled over Israel. But then he became a wicked man who did not obey God, so God chose a different man who would one day be king in his place.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-17-02.jpg"><p>God chose a young Israelite named David to be king after Saul. David was a shepherd from the town of Bethlehem. At different times while he was watching his father's sheep, David had killed both a lion and a bear that had attacked the sheep. David was a humble and righteous man who trusted and obeyed God.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-17-03.jpg"><p>David became a great soldier and leader. When David was still a young man, he fought against a giant named Goliath. Goliath was a trained soldier, very strong, and almost three meters tall! But God helped David kill Goliath and save Israel. After that, David won many victories over Israel's enemies, for which the people praised him.</p></section>
@@ -110,13 +109,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-17-13.jpg"><p>After Uriah was killed, David married Bathsheba. Later, she gave birth to David's son. God was very angry about what David had done, so he sent the prophet Nathan to tell David how evil his sin was. David repented of his sin and God forgave him. For the rest of his life, David followed and obeyed God, even in difficult times.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-17-14.jpg"><p>But as punishment for David's sin, his baby boy died. There was also fighting in David's family for the rest of his life, and David's power was greatly weakened. Though David had been unfaithful to God, God was still faithful to his promises. Later, David and Bathsheba had another son, and they named him Solomon.</p></section>
 <section><a href="../18/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

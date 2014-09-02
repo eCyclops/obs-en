@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>38. Jesus Is Betrayed</h1><h3>A Bible story from: Matthew 26:14-56; Mark 14:10-50; Luke 22:1-53; John 12:6; 18:1-11</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>38. Jesus Is Betrayed</h1><h3>A Bible story from: Matthew 26:14-56; Mark 14:10-50; Luke 22:1-53; John 12:6; 18:1-11</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-38-01.jpg"><p>Every year, the Jews celebrated the Passover. This was a celebration of how God had saved their ancestors from slavery in Egypt many centuries earlier. About three years after Jesus first began preaching and teaching publicly, Jesus told his disciples that he wanted to celebrate this Passover with them in Jerusalem, and that he would be killed there.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-38-02.jpg"><p>One of Jesus' disciples was a man named Judas. Judas was in charge of the apostles' moneybag, but he loved money and often stole money out of the bag. After Jesus and the disciples arrived in Jerusalem, Judas went to the Jewish leaders and offered to betray Jesus to them in exchange for money. He knew that the Jewish leaders denied that Jesus was the Messiah and that they were plotting to kill him.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-38-03.jpg"><p>The Jewish leaders, led by the high priest, paid Judas thirty silver coins to betray Jesus. This happened just as the prophets had predicted. Judas agreed, took the money, and went away. He began looking for an opportunity to help them arrest Jesus.</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-38-14.jpg"><p>Judas came with the Jewish leaders, soldiers, and a large crowd. They were carrying swords and clubs. Judas came to Jesus and said, "Greetings, Teacher," and kissed him. This was the sign for the Jewish leaders to know whom to arrest. Then Jesus said, "Judas, do you betray me with a kiss?"</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-38-15.jpg"><p>As the soldiers arrested Jesus, Peter pulled out his sword and cut off the ear of a servant of the high priest. Jesus said, "Put the sword away! I could ask the Father for an army of angels to defend me. But I must obey my Father." Then Jesus healed the man's ear. After Jesus was arrested, all the disciples ran away.</p></section>
 <section><a href="../39/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

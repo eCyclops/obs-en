@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>11. The Passover</h1><h3>A Bible story from: Exodus 11:1-12:32</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>11. The Passover</h1><h3>A Bible story from: Exodus 11:1-12:32</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-11-01.jpg"><p>God warned Pharaoh that if he did not let the Israelites go, then he would kill all the firstborn males of both people and animals. When Pharaoh heard this he still refused to believe and obey God.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-11-02.jpg"><p>God provided a way to save the firstborn son of anyone who believed in him. Each family had to choose a perfect lamb and kill it.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-11-03.jpg"><p>God told the Israelites to put some of the lamb's blood around the door of their house, and to roast the meat and eat it quickly, along with bread that was made without yeast. He also told them to be ready to leave Egypt when they ate.</p></section>
@@ -104,13 +103,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-11-07.jpg"><p>Every Egyptian firstborn male died, from the firstborn of the prisoner in jail, to the firstborn of Pharaoh. Many people in Egypt were crying and wailing because of their deep sadness.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-11-08.jpg"><p>That same night, Pharaoh called for Moses and Aaron and said, "Take the Israelites and leave Egypt immediately!" The Egyptian people also urged the Israelites to leave immediately.</p></section>
 <section><a href="../12/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

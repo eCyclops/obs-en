@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>15. The Promised Land</h1><h3>A Bible story from: Joshua 1-24</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>15. The Promised Land</h1><h3>A Bible story from: Joshua 1-24</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-15-01.jpg"><p>At last it was time for the Israelites to enter Canaan, the Promised Land. Joshua sent two spies to the Canaanite city of Jericho that was protected by strong walls. In that city there lived a prostitute named Rahab who hid the spies and later helped them to escape. She did this because she believed God. They promised to protect Rahab and her family when the Israelites would destroy Jericho.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-15-02.jpg"><p>The Israelites had to cross the Jordan River to enter into the Promised Land. God told Joshua, "Have the priests go first." When the priests started to step into the Jordan River, the water upstream stopped flowing so the Israelites could cross over to the other side of the river on dry ground.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-15-03.jpg"><p>After the people crossed the Jordan River, God told Joshua how to attack the powerful city of Jericho. The people obeyed God. Just as God told them to do, the soldiers and priests marched around the city of Jericho once a day for six days.</p></section>
@@ -109,13 +108,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-15-12.jpg"><p>After this battle, God gave each tribe of Israel its own section of the Promised Land. Then God gave Israel peace along all its borders.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-15-13.jpg"><p>When Joshua was an old man, he called all the people of Israel together. Then Joshua reminded the people of their obligation to obey the covenant that God had made with the Israelites at Sinai. The people promised to remain faithful to God and follow his laws.</p></section>
 <section><a href="../16/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

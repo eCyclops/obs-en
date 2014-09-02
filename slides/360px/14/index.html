@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>14. Wandering in the Wilderness</h1><h3>A Bible story from: Exodus 16-17; Numbers 10-14; 20; 27; Deuteronomy 34</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>14. Wandering in the Wilderness</h1><h3>A Bible story from: Exodus 16-17; Numbers 10-14; 20; 27; Deuteronomy 34</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-14-01.jpg"><p>After God had told the Israelites the laws he wanted them to obey as part of his covenant with them, they left Mount Sinai. God began leading them from toward the Promised Land, which was also called Canaan. The pillar of cloud went ahead of them towards Canaan and they followed it.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-14-02.jpg"><p>God had promised Abraham, Isaac, and Jacob that he would give the Promised Land to their descendants, but now there were many people groups living there. They were called Canaanites. The Canaanites did not worship or obey God. They worshiped false gods and did many evil things.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-14-03.jpg"><p>God told the Israelites, "You must get rid of all the Canaanites in the Promised Land. Do not make peace with them and do not marry them. You must completely destroy all of their idols. If you do not obey me, you will worship their idols instead of me."</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-14-14.jpg"><p>After the Israelites had wandered in the wilderness for forty years, all of them who had rebelled against God were dead. Then God led the people to the edge of the Promised Land again. Moses was now very old, so God chose Joshua to help him lead the people. God also promised Moses that one day, he would send another prophet like Moses.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-14-15.jpg"><p>Then God told Moses to go to the top of a mountain so he could see the Promised Land. Moses saw the Promised Land but God did not permit him to enter it. Then Moses died, and the Israelites mourned for thirty days. Joshua became their new leader. Joshua was a good leader because he trusted and obeyed God.</p></section>
 <section><a href="../15/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

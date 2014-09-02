@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>19. The Prophets</h1><h3>A Bible story from: 1 Kings 16-18; 2 Kings 5; Jeremiah 38</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>19. The Prophets</h1><h3>A Bible story from: 1 Kings 16-18; 2 Kings 5; Jeremiah 38</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-19-01.jpg"><p>Throughout the history of the Israelites, God sent them prophets. The prophets heard messages from God and then told the people God's messages.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-19-02.jpg"><p>Elijah was a prophet when Ahab was king over the kingdom of Israel. Ahab was an evil man who encouraged people to worship a false god named Baal. Elijah said to Ahab, "There will be no rain or dew in the kingdom of Israel until I say so." This made Ahab very angry.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-19-03.jpg"><p>God told Elijah to go to a stream in the wilderness to hide from Ahab who wanted to kill him. Every morning and every evening, birds would bring him bread and meat. Ahab and his army looked for Elijah, but they could not find him. The drought was so severe that the stream eventually dried up.</p></section>
@@ -114,13 +113,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-19-17.jpg"><p>Most of the time, the people did not obey God. They often mistreated the prophets and sometimes even killed them. Once, the prophet Jeremiah was put into a dry well and left there to die. He sank down into the mud that was in the bottom of the well, but then the king had mercy on him and ordered his servants to pull Jeremiah out of the well before he died.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-19-18.jpg"><p>The prophets continued to speak for God even though the people hated them. They warned people that God would destroy them if they did not repent. They also reminded people of the promise that God's Messiah would come.</p></section>
 <section><a href="../20/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

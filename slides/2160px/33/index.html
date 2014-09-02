@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>33. The Story of the Farmer</h1><h3>A Bible story from: Matthew 13:1-8, 18-23; Mark 4:1-8, 13-20; Luke 8:4-15</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>33. The Story of the Farmer</h1><h3>A Bible story from: Matthew 13:1-8, 18-23; Mark 4:1-8, 13-20; Luke 8:4-15</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-33-01.jpg"><p>One day, Jesus was teaching a very large crowd of people near the shore of the lake. So many people came to hear him that Jesus got into a boat at the edge of the water in order to have enough space to speak to them. He sat in the boat and taught the people.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-33-02.jpg"><p>Jesus told this story. "A farmer went out to plant some seed. As he was spreading the seeds by hand, some seeds happened to fall on the path, and the birds came and ate all of those seeds."</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-33-03.jpg"><p>"Other seeds fell on rocky ground, where there was very little soil. The seeds in the rocky ground sprouted quickly, but their roots were not able to go deep into the soil. When the sun came up and it got hot, the plants withered and died."</p></section>
@@ -105,13 +104,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-33-08.jpg"><p>"The thorny ground is a person who hears God's word, but as time passes, the cares, riches, and pleasures of life choke out his love for God. As a result, the teaching he heard does not produce fruit."</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-33-09.jpg"><p>"But the good soil is a person who hears the word of God, believes it, and produces fruit."</p></section>
 <section><a href="../34/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

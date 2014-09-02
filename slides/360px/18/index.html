@@ -91,10 +91,9 @@
             <li>50. Jesus Returns</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>18. The Divided Kingdom</h1><h3>A Bible story from: 1 Kings 1-6; 11-12</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>18. The Divided Kingdom</h1><h3>A Bible story from: 1 Kings 1-6; 11-12</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-18-01.jpg"><p>After many years, David died, and his son Solomon began to rule over Israel. God spoke to Solomon and asked him what he wanted most. When Solomon asked for wisdom, God was pleased and made him the wisest man in the world. Solomon learned many things and was a very wise judge. God also made him very wealthy.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-18-02.jpg"><p>In Jerusalem, Solomon built the Temple for which his father David had planned and gathered materials. People now worshiped God and offered sacrifices to him at the Temple instead of at the Tent of Meeting. God came and was present in the Temple, and he lived there with his people.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-18-03.jpg"><p>But Solomon loved women from other countries. He disobeyed God by marrying many women, almost 1,000 of them! Many of these women came from foreign countries and brought their gods with them and continued to worship them. When Solomon was old, he also worshiped their gods.</p></section>
@@ -109,13 +108,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-18-12.jpg"><p>All of the kings and most of the people of the kingdom of Israel worshiped idols. Their idol worship often included sexual immorality and sometimes even child sacrifice.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-18-13.jpg"><p>The kings of Judah were descendants of David. Some of these kings were good men who ruled justly and worshiped God. But most of Judah's kings were evil, corrupt, and they worshiped idols. Some of the kings even sacrificed their children to false gods. Most of the people of Judah also rebelled against God and worshiped other gods.</p></section>
 <section><a href="../19/index.html"><p>Next Chapter</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 
