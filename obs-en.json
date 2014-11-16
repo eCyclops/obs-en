@@ -466,12 +466,12 @@
         {
           "id": "08-01", 
           "img": "{{https://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-08-01.jpg}}", 
-          "text": "Joseph's brothers hated him because their father loved him most and because Joseph had dreamed that he would be their ruler. When Joseph came to his brothers, they kidnapped him and sold him to some slave traders."
+          "text": "Many years later, when Jacob was an old man, he sent his favorite son, Joseph, to check on his brothers who were taking care of the herds."
         }, 
         {
           "id": "08-02", 
           "img": "{{https://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-08-02.jpg}}", 
-          "text": "Many years later, when Jacob was an old man, he sent his favorite son, Joseph, to check on his brothers who were taking care of the herds."
+          "text": "Joseph's brothers hated him because their father loved him most and because Joseph had dreamed that he would be their ruler. When Joseph came to his brothers, they kidnapped him and sold him to some slave traders."
         }, 
         {
           "id": "08-03", 
@@ -3353,7 +3353,7 @@
       "title": "50. Jesus Returns"
     }
   ], 
-  "date_modified": "20141027", 
+  "date_modified": "20141116", 
   "direction": "ltr", 
   "language": "en"
 }
